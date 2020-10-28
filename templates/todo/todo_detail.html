@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django crashcourse</title>
+  </head>
+  <body>
+    <ul>
+      {% if request.user.is_authenticated %}
+        Hello {{ request.user.username }}
+      {% else %}
+        Hello Anonymus User
+      {% endif %}
+      <br>
+      the name of my todo is :{{ todo.name }}, and it's due by {{ todo.due_date }}</li>
+    </ul>
+    <a href="/{{ todo.id }}/update">Update this TODO</a>
+    <br>
+    <a href="/{{ todo.id }}/delete">Delete this TODO</a>
+  </body>
+</html>
